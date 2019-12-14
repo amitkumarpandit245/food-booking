@@ -1,7 +1,7 @@
 package com.cts.food.food_booking;
 
 import java.time.LocalTime;
-import java.util.Arrays;
+import java.util.List;
 
 public class Restaurant {
 	private int restaurantId;
@@ -9,10 +9,10 @@ public class Restaurant {
 	private double rating;
 	private LocalTime openingTime;
 	private LocalTime closingTime;
-	private String[] reviews;
-	private String[] dishes;
+	private List<Review> reviews;
+	private List<Dishes> dishes;
 	public Restaurant(int restaurantId, String restaurantName, double rating, LocalTime openingTime,
-			LocalTime closingTime, String[] reviews, String[] dishes) {
+			LocalTime closingTime, List<Review> reviews, List<Dishes> dishes) {
 		super();
 		this.restaurantId = restaurantId;
 		this.restaurantName = restaurantName;
@@ -22,6 +22,17 @@ public class Restaurant {
 		this.reviews = reviews;
 		this.dishes = dishes;
 	}
+
+
+
+	public int getRestaurantId() {
+		return restaurantId;
+	}
+
+	public void setRestaurantId(int restaurantId) {
+		this.restaurantId = restaurantId;
+	}
+
 	public String getRestaurantName() {
 		return restaurantName;
 	}
@@ -46,24 +57,26 @@ public class Restaurant {
 	public void setClosingTime(LocalTime closingTime) {
 		this.closingTime = closingTime;
 	}
-	public String[] getReviews() {
+	public List<Review> getReviews() {
 		return reviews;
 	}
-	public void setReviews(String[] reviews) {
+	public void setReviews(List<Review> reviews) {
 		this.reviews = reviews;
 	}
-	public String[] getDishes() {
+	public List<Dishes> getDishes() {
 		return dishes;
 	}
-	public void setDishes(String[] dishes) {
+	public void setDishes(List<Dishes> dishes) {
 		this.dishes = dishes;
 	}
 	@Override
 	public String toString() {
 		return "Restaurant [restaurantId=" + restaurantId + ", restaurantName=" + restaurantName + ", rating=" + rating
-				+ ", openingTime=" + openingTime + ", closingTime=" + closingTime + ", reviews="
-				+ Arrays.toString(reviews) + ", dishes=" + Arrays.toString(dishes) + "]";
+				+ ", openingTime=" + openingTime + ", closingTime=" + closingTime + ", reviews=" + reviews + ", dishes="
+				+ dishes + "]";
 	}
-	
+
+
+
 
 }
