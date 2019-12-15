@@ -1,21 +1,19 @@
 package com.cts.food.food_booking;
 
-import java.util.Arrays;
-
 public class Review {
 	private int reviewId;
-	String review;
+	String customerReview;
 	private String[] reviews;
 
 
 	public Review(int reviewId, String review) {
 		super();
 		this.reviewId = reviewId;
-		this.review = review;
+		this.customerReview = review;
 	}
 
 	public String getReview() {
-		return review;
+		return customerReview;
 	}
 
 	public int getReviewId() {
@@ -27,7 +25,7 @@ public class Review {
 	}
 
 	public void setReview(String review) {
-		this.review = review;
+		this.customerReview = review;
 	}
 
 	public String[] getReviews() {
@@ -39,7 +37,7 @@ public class Review {
 
 	@Override
 	public String toString() {
-		return "Review [reviewId=" + reviewId + ", review=" + review + "]";
+		return "Review [reviewId=" + reviewId + ", review=" + customerReview + "]";
 	}
 
 

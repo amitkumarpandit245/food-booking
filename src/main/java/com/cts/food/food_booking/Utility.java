@@ -3,6 +3,7 @@ package com.cts.food.food_booking;
 import java.time.LocalTime;
 
 public class Utility {
+	private Utility() {}
 	static FoodBookingDAO obj=new FoodBookingDAO();
 	public static Dishes getDishes(String data) {
 		String[] line=data.split(",");
