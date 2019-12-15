@@ -5,7 +5,6 @@ public class Review {
 	String customerReview;
 	private String[] reviews;
 
-
 	public Review(int reviewId, String review) {
 		super();
 		this.reviewId = reviewId;
@@ -31,6 +30,7 @@ public class Review {
 	public String[] getReviews() {
 		return reviews;
 	}
+
 	public void setReviews(String[] reviews) {
 		this.reviews = reviews;
 	}
@@ -39,8 +39,5 @@ public class Review {
 	public String toString() {
 		return "Review [reviewId=" + reviewId + ", review=" + customerReview + "]";
 	}
-
-
-
 
 }

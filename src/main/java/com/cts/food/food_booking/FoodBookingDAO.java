@@ -14,7 +14,8 @@ import org.slf4j.LoggerFactory;
 
 public class FoodBookingDAO implements InterfaceFoodBooking {
 	Logger logger = LoggerFactory.getLogger(FoodBookingDAO.class);
-	Path restPath=Paths.get("src\\data\\Restaurant.txt");
+	Path restPath = Paths.get("src\\data\\Restaurant.txt");
+
 	public List<Review> getReview(int restaurantID) {
 		logger.info("Inside getReview() Method");
 		List<Review> fileData = new ArrayList<>();
@@ -47,8 +48,7 @@ public class FoodBookingDAO implements InterfaceFoodBooking {
 		logger.info("Inside getAllRestaurant() Method");
 		List<Restaurant> fileData = new ArrayList<>();
 		try {
-			fileData = Files.lines(restPath).map(Utility::getRestaurant)
-					.collect(Collectors.toList());
+			fileData = Files.lines(restPath).map(Utility::getRestaurant).collect(Collectors.toList());
 
 		} catch (IOException e) {
 			logger.info(e.getMessage());
@@ -60,8 +60,8 @@ public class FoodBookingDAO implements InterfaceFoodBooking {
 		logger.info("Inside filterRestaurantBasedOnRating() Method");
 		List<Restaurant> fileData = new ArrayList<>();
 		try {
-			fileData = Files.lines(restPath).map(Utility::getRestaurant)
-					.collect(Collectors.toList()).stream().filter(r -> r.getRating() < 4).collect(Collectors.toList());
+			fileData = Files.lines(restPath).map(Utility::getRestaurant).collect(Collectors.toList()).stream()
+					.filter(r -> r.getRating() < 4).collect(Collectors.toList());
 
 		} catch (IOException e) {
 			logger.info(e.getMessage());
@@ -73,9 +73,8 @@ public class FoodBookingDAO implements InterfaceFoodBooking {
 		logger.info("Inside getAllRestaurantAvailability() Method");
 		List<Restaurant> fileData = new ArrayList<>();
 		try {
-			fileData = Files.lines(restPath).map(Utility::getRestaurant)
-					.collect(Collectors.toList()).stream().filter(r -> r.getOpeningTime().isBefore(LocalTime.now())
-							|| r.getClosingTime().isAfter(LocalTime.now()))
+			fileData = Files.lines(restPath).map(Utility::getRestaurant).collect(Collectors.toList()).stream().filter(
+					r -> r.getOpeningTime().isBefore(LocalTime.now()) || r.getClosingTime().isAfter(LocalTime.now()))
 					.collect(Collectors.toList());
 
 		} catch (IOException e) {

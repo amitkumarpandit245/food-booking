@@ -69,6 +69,7 @@ public class Restaurant {
 	public void setDishes(List<Dishes> dishes) {
 		this.dishes = dishes;
 	}
+	
 	@Override
 	public String toString() {
 		return "Restaurant [restaurantId=" + restaurantId + ", restaurantName=" + restaurantName + ", rating=" + rating
